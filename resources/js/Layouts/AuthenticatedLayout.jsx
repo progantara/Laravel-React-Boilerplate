@@ -15,6 +15,7 @@ import {
     MdDashboard,
 } from "react-icons/md";
 import { FaHome, FaUser } from "react-icons/fa";
+import SideLink from "@/Components/Links/SideLink";
 
 export default function Authenticated({ user, header, children }) {
     // get width of the window
@@ -68,7 +69,7 @@ export default function Authenticated({ user, header, children }) {
                                             )
                                         }
                                     >
-                                        <CgMenuLeftAlt className="dark:text-white text-xl" />
+                                        <CgMenuLeftAlt className="bg-gray-100 dark:bg-gray-700 p-1 rounded-full dark:text-white text-3xl hover:text-primary" />
                                     </button>
                                 </div>
                             )}
@@ -76,7 +77,7 @@ export default function Authenticated({ user, header, children }) {
                             <div className="flex items-center">
                                 <Link href="/">
                                     <div className="flex items-center">
-                                        <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200 me-1" />
+                                        <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200 me-1 lg:ms-" />
                                         <span className="dark:text-gray-200">
                                             PROGANTARA
                                         </span>
@@ -87,22 +88,24 @@ export default function Authenticated({ user, header, children }) {
                                     <Link href={route("dashboard")}>
                                         <FaHome className="text-primary dark:text-white" />
                                     </Link>
-                                    <span className="mx-2 dark:text-white">/</span>
+                                    <span className="mx-2 dark:text-white">
+                                        /
+                                    </span>
                                     <span className="text-gray-500 dark:text-gray-400">
-                                        Dashboard
+                                        {header}
                                     </span>
                                 </div>
                             </div>
 
                             <div className="flex items-center ml-auto">
                                 <button>
-                                    <MdOutlineNotifications className="dark:text-white text-2xl me-2" />
+                                    <MdOutlineNotifications className="bg-gray-100 dark:bg-gray-700 p-1 rounded-full dark:text-white text-3xl me-2 hover:text-primary" />
                                 </button>
 
                                 <Dropdown>
                                     <Dropdown.Trigger>
                                         <button>
-                                            <MdOutlineAccountCircle className="dark:text-white text-2xl me-3" />
+                                            <MdOutlineAccountCircle className="dark:text-white text-3xl me-3" />
                                         </button>
                                     </Dropdown.Trigger>
                                     <Dropdown.Content
@@ -154,23 +157,26 @@ export default function Authenticated({ user, header, children }) {
                                     : "left-[-270px] transition-all duration-[0.3s] ease-[ease-in-out] fixed top-[52px] w-[250px] p-5 bg-white dark:bg-gray-800 dark:text-white border-r border-gray-100 dark:border-gray-700 min-h-screen z-10"
                             }
                         >
+                            {/** Sidebar */}
                             <ul>
                                 <li>
-                                    <Link href={route("dashboard")}>
-                                        <div className="flex items-center mb-5 rounded p-2 hover:bg-gray-500">
-                                            <MdDashboard className="text-xl me-2" />
-                                            <span>Dashboard</span>
-                                        </div>
-                                    </Link>
+                                    <SideLink
+                                        href={route("dashboard")}
+                                        active={route().current("dashboard")}
+                                    >
+                                        <MdDashboard className="text-xl me-2" />
+                                        <span>Dashboard</span>
+                                    </SideLink>
                                 </li>
                                 <hr className="my-4" />
                                 <li>
-                                    <Link href={route("profile.edit")}>
-                                        <div className="flex items-center mb-5 rounded p-2 hover:bg-gray-500">
-                                            <FaUser className="text-xl me-2" />
-                                            <span>Profile</span>
-                                        </div>
-                                    </Link>
+                                    <SideLink
+                                        href={route("profile.edit")}
+                                        active={route().current("profile.edit")}
+                                    >
+                                        <CgProfile className="text-xl me-2" />
+                                        <span>Profile</span>
+                                    </SideLink>
                                 </li>
                             </ul>
                         </div>
@@ -179,7 +185,9 @@ export default function Authenticated({ user, header, children }) {
                             {header && (
                                 <header className="bg-white dark:bg-gray-800 shadow">
                                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                                        {header}
+                                        <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                                            {header}
+                                        </h2>
                                     </div>
                                 </header>
                             )}
