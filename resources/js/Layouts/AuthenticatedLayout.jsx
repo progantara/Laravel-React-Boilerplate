@@ -8,7 +8,13 @@ import { Button, StyledEngineProvider } from "@mui/material";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import { CgLogOff, CgMenuLeftAlt, CgProfile, CgUser } from "react-icons/cg";
+import {
+    CgLogOff,
+    CgMenu,
+    CgMenuLeftAlt,
+    CgProfile,
+    CgUser,
+} from "react-icons/cg";
 import {
     MdOutlineAccountCircle,
     MdOutlineNotifications,
@@ -59,42 +65,26 @@ export default function Authenticated({ user, header, children }) {
                 <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
                     <nav className="fixed top-0 w-full z-10 bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
                         <div className="flex px-3 py-2 justify-between">
-                            {width < 1024 && (
-                                <div className="flex items-center pe-4">
-                                    <button
-                                        onClick={() =>
-                                            setShowingNavigationDropdown(
-                                                (showingNavigationDropdown) =>
-                                                    !showingNavigationDropdown
-                                            )
-                                        }
-                                    >
-                                        <CgMenuLeftAlt className="bg-gray-100 dark:bg-gray-700 p-1 rounded-full dark:text-white text-3xl hover:text-primary" />
-                                    </button>
-                                </div>
-                            )}
-
-                            <div className="flex items-center">
-                                <Link href="/">
-                                    <div className="flex items-center">
-                                        <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200 me-1 lg:ms-" />
-                                        <span className="dark:text-gray-200">
-                                            PROGANTARA
-                                        </span>
-                                    </div>
-                                </Link>
-
-                                <div className="hidden lg:flex items-center lg:ml-10">
-                                    <Link href={route("dashboard")}>
-                                        <FaHome className="text-primary dark:text-white" />
-                                    </Link>
-                                    <span className="mx-2 dark:text-white">
-                                        /
-                                    </span>
-                                    <span className="text-gray-500 dark:text-gray-400">
-                                        {header}
+                            <Link href="/">
+                                <div className="flex items-center">
+                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200 me-1 lg:ms-" />
+                                    <span className="hidden md:flex dark:text-gray-200">
+                                        PROGANTARA
                                     </span>
                                 </div>
+                            </Link>
+
+                            <div className="flex items-center ps-4">
+                                <button
+                                    onClick={() =>
+                                        setShowingNavigationDropdown(
+                                            (showingNavigationDropdown) =>
+                                                !showingNavigationDropdown
+                                        )
+                                    }
+                                >
+                                    <CgMenu className="bg-gray-100 dark:bg-gray-700 p-1 rounded-full dark:text-white text-3xl hover:text-primary" />
+                                </button>
                             </div>
 
                             <div className="flex items-center ml-auto">
@@ -181,7 +171,7 @@ export default function Authenticated({ user, header, children }) {
                             </ul>
                         </div>
 
-                        <div className="relative lg:left-[250px] w-full lg:w-[calc(100%-250px)]">
+                        <div className={"relative transition-all duration-[.3s] delay-100 " + (showingNavigationDropdown ? "left-[250px] w-[calc(100%-250px)]" : "left-[0px] w-full")}>
                             {header && (
                                 <header className="bg-white dark:bg-gray-800 shadow">
                                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
