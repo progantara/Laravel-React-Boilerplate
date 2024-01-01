@@ -37,7 +37,7 @@ export default function Sidebar() {
                     </SideLinks.Content>
                 </SideLinks>
             </li>
-            <h2 className="-mx-8 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-10 font-extrabold uppercase dark:bg-gray-900 dark:bg-opacity-[0.5]">
+            <h2 className="-mx-5 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-7 font-extrabold uppercase dark:bg-gray-900 bg-opacity-[0.5]">
                 <span>APPS</span>
             </h2>
             <li>
@@ -51,7 +51,7 @@ export default function Sidebar() {
                     </div>
                 </SideLink>
             </li>
-            <h2 className="-mx-8 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-10 font-extrabold uppercase dark:bg-gray-900 dark:bg-opacity-[0.5]">
+            <h2 className="-mx-5 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-7 font-extrabold uppercase dark:bg-gray-900 bg-opacity-[0.5]">
                 <span>UI</span>
             </h2>
             <li>

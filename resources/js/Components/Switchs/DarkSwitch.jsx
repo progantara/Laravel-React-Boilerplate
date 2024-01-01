@@ -3,8 +3,8 @@ import Switch from "@mui/material/Switch";
 import { useEffect, useState } from "react";
 
 const DarkSwitch = styled(Switch)(({ theme }) => ({
-    width: 55,
-    height: 30,
+    width: 52,
+    height: 27,
     padding: 7,
     "& .MuiSwitch-switchBase": {
         margin: 1,

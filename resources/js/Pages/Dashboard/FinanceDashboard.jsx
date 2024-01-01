@@ -52,55 +52,37 @@ export default function Finance({ auth }) {
         <AuthenticatedLayout
             user={auth.user}
             header={
-                <ul className="flex space-x-2 rtl:space-x-reverse">
-                    <li>
-                        <Link
-                            href={route("dashboard.finance")}
-                            className="text-primary hover:underline"
-                        >
-                            Dashboard
-                        </Link>
-                    </li>
-                    <li className="before:mr-1 before:content-['/'] rtl:before:ml-1 dark:text-gray-400">
-                        <span>Finance</span>
-                    </li>
-                </ul>
+                <>
+                    <ul className="flex space-x-2">
+                        <li>
+                            <Link
+                                href={route("dashboard.finance")}
+                                className="text-primary hover:underline"
+                            >
+                                Dashboard
+                            </Link>
+                        </li>
+                        <li className="before:mr-1 before:content-['/'] rtl:before:ml-1 dark:text-gray-400">
+                            <span>Finance</span>
+                        </li>
+                    </ul>
+                    <h1 className="text-xl font-bold">FINANCE DASHBOARD</h1>
+                </>
             }
         >
-            <Head title="Dashboard" />
+            <Head title="Finance Dashboard" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="overflow-hidden shadow-sm sm:rounded-lg mb-5">
-                        <div className="p-6 text-gray-900 dark:bg-gray-800  dark:text-gray-100 mb-5">
-                            You're logged in!
-                        </div>
-
-                        <DataTable columns={columns} rows={rows} />
-                    </div>
-                    <PrimaryButton className="mb-5">Hello World</PrimaryButton>
-                    <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900 dark:text-gray-100">
-                            You're logged in! lorem Culpa ex cillum quis
-                            deserunt voluptate amet elit do qui fugiat.Tempor
-                            anim proident reprehenderit veniam adipisicing
-                            pariatur veniam cupidatat fugiat ex cillum. Commodo
-                            sint velit sit labore enim in amet excepteur do qui
-                            occaecat laboris non amet. Lorem labore sunt commodo
-                            est laborum sit non elit. Culpa cupidatat eiusmod
-                            adipisicing ex ea esse do duis fugiat sit ea. Magna
-                            officia laboris excepteur voluptate proident aute
-                            deserunt irure laboris. Ut fugiat amet laborum sunt
-                            voluptate est consectetur in magna. Sint velit
-                            commodo culpa fugiat labore officia veniam cillum.
-                            Reprehenderit in ut sit qui culpa ad. Adipisicing
-                            dolor ex ex ad dolore veniam fugiat ullamco dolor.
-                            Sunt est laborum cillum pariatur non fugiat anim
-                            consectetur do. Incididunt fugiat incididunt fugiat
-                            deserunt.
-                        </div>
-                    </div>
-                </div>
+            <div className="py-6">
+                <span>
+                    Laborum sit pariatur laborum sit est consequat. Irure elit
+                    elit deserunt commodo. Occaecat qui deserunt aliqua aliqua
+                    nulla commodo est tempor aliqua laboris. Labore deserunt
+                    minim pariatur est reprehenderit id proident ullamco. Eu
+                    cillum anim voluptate ex cupidatat qui Lorem culpa ad
+                    mollit. Sit anim amet laborum consequat labore. Incididunt
+                    est deserunt consequat consectetur reprehenderit dolor do
+                    esse veniam laboris commodo tempor tempor commodo.
+                </span>
             </div>
         </AuthenticatedLayout>
     );

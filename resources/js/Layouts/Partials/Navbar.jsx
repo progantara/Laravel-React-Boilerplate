@@ -10,8 +10,12 @@ import { Switch } from "@mui/material";
 import DarkSwitch from "@/Components/Switchs/DarkSwitch";
 
 export default function Navbar() {
-    const { theme, setTheme, showingNavigationDropdown, setShowingNavigationDropdown } =
-        useContext(LayoutCtx);
+    const {
+        theme,
+        setTheme,
+        showingNavigationDropdown,
+        setShowingNavigationDropdown,
+    } = useContext(LayoutCtx);
 
     const handleThemeChange = (event) => {
         setTheme(event.target.checked ? "dark" : "light");
@@ -43,11 +47,13 @@ export default function Navbar() {
                 </div>
 
                 <div className="flex items-center ml-auto">
-                    <DarkSwitch
-                        checked={theme === "dark"}
-                        onChange={handleThemeChange}
-                        inputProps={{ "aria-label": "controlled" }}
-                    />
+                    <div className="me-2">
+                        <DarkSwitch
+                            checked={theme === "dark"}
+                            onChange={handleThemeChange}
+                            inputProps={{ "aria-label": "controlled" }}
+                        />
+                    </div>
 
                     <span className="relative inline-flex me-2">
                         <button>
