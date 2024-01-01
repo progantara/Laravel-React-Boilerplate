@@ -110,7 +110,7 @@ export default function Authenticated({ user, header, children }) {
                                     </header>
                                 )}
 
-                                <div className="my-6 mx-4 bg-white dark:bg-gray-800 dark:text-white">{children}</div>
+                                <div className="my-6 mx-4 dark:text-white">{children}</div>
                             </div>
                         </main>
                     </div>

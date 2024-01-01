@@ -35,6 +35,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return Inertia::render('Dashboard/AnalyticDashboard');
         })->name('analytic');
     });
+
+    /** APPS */
+
+    /** UI */
+    Route::prefix('elements')->name('elements.')->group(function () {
+        Route::get('/alert', function () {
+            return Inertia::render('Elements/AlertElement');
+        })->name('alert');
+    });
+
+    /** USER AND PAGES */
+    Route::prefix('pages')->name('pages.')->group(function () {
+        Route::get('/blank', function () {
+            return Inertia::render('Blank');
+        })->name('blank');
+    });
 });
 
 Route::middleware('auth')->group(function () {

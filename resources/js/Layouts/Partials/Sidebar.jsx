@@ -37,7 +37,7 @@ export default function Sidebar() {
                     </SideLinks.Content>
                 </SideLinks>
             </li>
-            <h2 className="-mx-5 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-7 font-extrabold uppercase dark:bg-gray-900 bg-opacity-[0.5]">
+            <h2 className="-mx-5 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-7 font-extrabold uppercase dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-30">
                 <span>APPS</span>
             </h2>
             <li>
@@ -51,7 +51,7 @@ export default function Sidebar() {
                     </div>
                 </SideLink>
             </li>
-            <h2 className="-mx-5 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-7 font-extrabold uppercase dark:bg-gray-900 bg-opacity-[0.5]">
+            <h2 className="-mx-5 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-7 font-extrabold uppercase dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-30">
                 <span>UI</span>
             </h2>
             <li>
@@ -65,8 +65,8 @@ export default function Sidebar() {
                     <SideLinks.Content>
                         <li>
                             <SideLink
-                                href={"#"}
-                                active={false}
+                                href={route("elements.alert")}
+                                active={route().current("elements.alert")}
                                 className="mb-1"
                             >
                                 Alerts
@@ -88,6 +88,30 @@ export default function Sidebar() {
                                 className="mb-1"
                             >
                                 Badges
+                            </SideLink>
+                        </li>
+                    </SideLinks.Content>
+                </SideLinks>
+            </li>
+            <h2 className="-mx-5 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-7 font-extrabold uppercase dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-30">
+                <span>USER AND PAGES</span>
+            </h2>
+            <li>
+                <SideLinks>
+                    <SideLinks.Trigger>
+                        <div className="flex items-center">
+                            <FaCube className="me-2" />
+                            <span>Pages</span>
+                        </div>
+                    </SideLinks.Trigger>
+                    <SideLinks.Content>
+                        <li>
+                            <SideLink
+                                href={route("pages.blank")}
+                                active={route().current("pages.blank")}
+                                className="mb-1"
+                            >
+                                Blank
                             </SideLink>
                         </li>
                     </SideLinks.Content>

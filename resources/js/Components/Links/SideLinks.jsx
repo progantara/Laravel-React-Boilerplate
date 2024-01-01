@@ -1,11 +1,8 @@
-import SideLink from "./SideLink";
-import { MdDashboard } from "react-icons/md";
 import { CgChevronDown } from "react-icons/cg";
 import {
     Fragment,
     createContext,
     useContext,
-    useEffect,
     useState,
 } from "react";
 import { Transition } from "@headlessui/react";
@@ -22,13 +19,12 @@ const SideLinks = ({ children }) => {
             //check if ch is array
             if (Array.isArray(ch)) {                
                 ch.forEach((c) => {
-                    // console.log(c.props.children.props.active);
                     if (c.props.children.props.active) {
                         active = true;
                     }
                 });
             } else {
-                if (ch.props.active) {
+                if (ch.props.children?.props?.active) {
                     active = true;
                 }
             }
