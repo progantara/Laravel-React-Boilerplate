@@ -28,11 +28,11 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('dashboard')->name('dashboard.')->group(function () {
         Route::get('/finance', function () {
-            return Inertia::render('Dashboard/DashFinance');
+            return Inertia::render('Dashboard/FinanceDashboard');
         })->name('finance');
 
         Route::get('/analytic', function () {
-            return Inertia::render('Dashboard/DashAnalytic');
+            return Inertia::render('Dashboard/AnalyticDashboard');
         })->name('analytic');
     });
 });
