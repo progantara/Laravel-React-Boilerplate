@@ -33,42 +33,42 @@ export default function AlertElement({ auth }) {
                 <h3 className="font-bold mb-5">Default Alert</h3>
 
                 <Box className="mb-3">
-                    <BaseAlert className="bg-primary-500 bg-opacity-20 text-primary">
+                    <BaseAlert className="bg-primary-light text-primary">
                         <strong>Primary!</strong> Lorem Ipsum is simply dummy
                         text of the printing.
                     </BaseAlert>
                 </Box>
 
                 <Box className="mb-3">
-                    <BaseAlert className="bg-secondary-500 bg-opacity-20 text-secondary">
+                    <BaseAlert className="bg-secondary-light bg-opacity-20 text-secondary">
                         <strong>Secondary!</strong> Lorem Ipsum is simply dummy
                         text of the printing.
                     </BaseAlert>
                 </Box>
 
                 <Box className="mb-3">
-                    <BaseAlert className="bg-success-500 bg-opacity-20 text-success">
+                    <BaseAlert className="bg-success-light text-success">
                         <strong>Success!</strong> Lorem Ipsum is simply dummy
                         text of the printing.
                     </BaseAlert>
                 </Box>
 
                 <Box className="mb-3">
-                    <BaseAlert className="bg-danger-500 bg-opacity-20 text-danger">
+                    <BaseAlert className="bg-danger-light text-danger">
                         <strong>Danger!</strong> Lorem Ipsum is simply dummy
                         text of the printing.
                     </BaseAlert>
                 </Box>
 
                 <Box className="mb-3">
-                    <BaseAlert className="bg-warning-500 bg-opacity-20 text-warning">
+                    <BaseAlert className="bg-warning-light text-warning">
                         <strong>Warning!</strong> Lorem Ipsum is simply dummy
                         text of the printing.
                     </BaseAlert>
                 </Box>
 
                 <Box className="mb-3">
-                    <BaseAlert className="bg-info-500 bg-opacity-20 text-info">
+                    <BaseAlert className="bg-info-light text-info">
                         <strong>Info!</strong> Lorem Ipsum is simply dummy text
                         of the printing.
                     </BaseAlert>

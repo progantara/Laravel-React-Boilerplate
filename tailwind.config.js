@@ -25,6 +25,7 @@ export default {
                     700: "#4361ee",
                     800: "#3e46c3",
                     900: "#323b9e",
+                    light: "#d7e0fc",
                 },
                 secondary: {
                     DEFAULT: "#805dca",  // Changed the default color to #805dca
@@ -37,7 +38,8 @@ export default {
                     600: "#6d4eb7",
                     700: "#5c409e",
                     800: "#4d3485",
-                    900: "#3b286c",          
+                    900: "#3b286c",       
+                    light: "#d0b5e3",
                 },
                 success: {
                     DEFAULT: "#10B981",
@@ -51,6 +53,7 @@ export default {
                     700: "#047857",
                     800: "#065F46",
                     900: "#064E3B",
+                    light: "#D1FAE5",
                 },
                 danger: {
                     DEFAULT: "#EF4444",
@@ -64,6 +67,7 @@ export default {
                     700: "#B91C1C",
                     800: "#991B1B",
                     900: "#7F1D1D",
+                    light: "#FEE2E2",
                 },
                 warning: {
                     DEFAULT: "#F59E0B",
@@ -77,6 +81,7 @@ export default {
                     700: "#B45309",
                     800: "#92400E",
                     900: "#78350F",
+                    light: "#FEF3C7",
                 },
                 info: {
                     DEFAULT: "#2196f3",
@@ -90,6 +95,7 @@ export default {
                     700: "#1976D2",
                     800: "#1565C0",
                     900: "#0D47A1",
+                    light: "#DBEAFE",
                 },
             },
             fontFamily: {

@@ -83,8 +83,8 @@ export default function Sidebar() {
                         </li>
                         <li>
                             <SideLink
-                                href={"#"}
-                                active={false}
+                                href={route("elements.badge")}
+                                active={route().current("elements.badge")}
                                 className="mb-1"
                             >
                                 Badges

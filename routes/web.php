@@ -46,6 +46,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/avatar', function () {
             return Inertia::render('Elements/AvatarElement');
         })->name('avatar');
+        Route::get('/badge', function () {
+            return Inertia::render('Elements/BadgeElement');
+        })->name('badge');
     });
 
     /** USER AND PAGES */
