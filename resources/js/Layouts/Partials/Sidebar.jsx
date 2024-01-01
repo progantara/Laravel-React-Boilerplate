@@ -74,8 +74,8 @@ export default function Sidebar() {
                         </li>
                         <li>
                             <SideLink
-                                href={"#"}
-                                active={false}
+                                href={route("elements.avatar")}
+                                active={route().current("elements.avatar")}
                                 className="mb-1"
                             >
                                 Avatars

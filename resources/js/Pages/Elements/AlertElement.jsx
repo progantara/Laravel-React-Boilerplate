@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 import { FaBox, FaCheck, FaHome, FaInfoCircle } from "react-icons/fa";
 import { GoAlert } from "react-icons/go";
 
-export default function Alert({ auth }) {
+export default function AlertElement({ auth }) {
     return (
         <AuthenticatedLayout
             user={auth.user}

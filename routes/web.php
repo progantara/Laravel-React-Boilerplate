@@ -43,6 +43,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/alert', function () {
             return Inertia::render('Elements/AlertElement');
         })->name('alert');
+        Route::get('/avatar', function () {
+            return Inertia::render('Elements/AvatarElement');
+        })->name('avatar');
     });
 
     /** USER AND PAGES */
