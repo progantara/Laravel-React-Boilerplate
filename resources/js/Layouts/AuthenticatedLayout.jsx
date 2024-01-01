@@ -84,7 +84,7 @@ export default function Authenticated({ user, header, children }) {
                         >
                             <div
                                 className={
-                                    "transition-all duration-[0.3s] ease-[ease-in-out] fixed top-[52px] w-[250px] p-5 bg-white dark:bg-gray-800 dark:text-white border-r border-gray-100 dark:border-gray-700 min-h-screen z-10 " +
+                                    "transition-[left,width]  duration-[0.3s] ease-[ease-in-out] fixed top-[52px] w-[250px] p-5 bg-white dark:bg-gray-800 dark:text-white border-r border-gray-100 dark:border-gray-700 min-h-screen z-10 " +
                                     (showingNavigationDropdown
                                         ? "left-[0px]"
                                         : "left-[-270px]")
@@ -96,7 +96,7 @@ export default function Authenticated({ user, header, children }) {
 
                             <div
                                 className={
-                                    "relative transition-all duration-[.3s] delay-100 " +
+                                    "relative transition-[left,width] duration-[.3s] delay-100 " +
                                     (showingNavigationDropdown
                                         ? "left-[0px] lg:left-[250px] w-full lg:w-[calc(100%-250px)]"
                                         : "left-[0px] w-full")

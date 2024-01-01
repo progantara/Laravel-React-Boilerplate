@@ -12,7 +12,7 @@ export default function SideLink({
                 className={
                     "flex items-center justify-between rounded p-2 hover:bg-gray-100 hover:text-primary dark:hover:text-white dark:hover:bg-gray-500 " +
                     (active
-                        ? "border-b border-primary bg-gray-100 text-primary dark:text-white dark:bg-gray-500 "
+                        ? " border-b-2 border-primary bg-gray-100 text-primary dark:text-white dark:bg-gray-500 "
                         : "") +
                     className
                 }

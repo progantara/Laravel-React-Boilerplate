@@ -2,6 +2,7 @@ import SideLinks from "@/Components/Links/SideLinks";
 import { MdDashboard } from "react-icons/md";
 import SideLink from "@/Components/Links/SideLink";
 import { CgProfile } from "react-icons/cg";
+import { FaCube } from "react-icons/fa";
 
 export default function Sidebar() {
     return (
@@ -36,7 +37,7 @@ export default function Sidebar() {
                     </SideLinks.Content>
                 </SideLinks>
             </li>
-            <h2 className="-mx-8 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-10 font-extrabold uppercase dark:bg-gray-900">
+            <h2 className="-mx-8 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-10 font-extrabold uppercase dark:bg-gray-900 dark:bg-opacity-[0.5]">
                 <span>APPS</span>
             </h2>
             <li>
@@ -49,6 +50,48 @@ export default function Sidebar() {
                         <span>Profile</span>
                     </div>
                 </SideLink>
+            </li>
+            <h2 className="-mx-8 mt-4 mb-2 flex items-center bg-gray-100 py-3 px-10 font-extrabold uppercase dark:bg-gray-900 dark:bg-opacity-[0.5]">
+                <span>UI</span>
+            </h2>
+            <li>
+                <SideLinks>
+                    <SideLinks.Trigger>
+                        <div className="flex items-center">
+                            <FaCube className="me-2" />
+                            <span>Elements</span>
+                        </div>
+                    </SideLinks.Trigger>
+                    <SideLinks.Content>
+                        <li>
+                            <SideLink
+                                href={"#"}
+                                active={false}
+                                className="mb-1"
+                            >
+                                Alerts
+                            </SideLink>
+                        </li>
+                        <li>
+                            <SideLink
+                                href={"#"}
+                                active={false}
+                                className="mb-1"
+                            >
+                                Avatars
+                            </SideLink>
+                        </li>
+                        <li>
+                            <SideLink
+                                href={"#"}
+                                active={false}
+                                className="mb-1"
+                            >
+                                Badges
+                            </SideLink>
+                        </li>
+                    </SideLinks.Content>
+                </SideLinks>
             </li>
         </ul>
     );

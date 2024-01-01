@@ -53,9 +53,9 @@ export default function Navbar() {
                         <button>
                             <MdOutlineNotifications className="bg-gray-100 dark:bg-gray-700 p-1 rounded-full dark:text-white text-3xl hover:text-primary" />
                         </button>
-                        <span className="flex absolute h-3 w-3 top-0 right-0">
+                        <span className="flex absolute h-[.65rem] w-[.65rem] top-0 right-0">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                            <span className="relative inline-flex rounded-full h-[.65rem] w-[.65rem] bg-sky-500"></span>
                         </span>
                     </span>
 
