@@ -40,7 +40,7 @@ export default function AlertElement({ auth }) {
                 </Box>
 
                 <Box className="mb-3">
-                    <BaseAlert className="bg-secondary-light bg-opacity-20 text-secondary">
+                    <BaseAlert className="bg-secondary-light text-secondary">
                         <strong>Secondary!</strong> Lorem Ipsum is simply dummy
                         text of the printing.
                     </BaseAlert>

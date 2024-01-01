@@ -32,7 +32,7 @@ export default function BadgeElement({ auth }) {
                 <div className="bg-white dark:bg-gray-800 p-5 rounded">
                     <h3 className="font-bold h-5">Basic Badge</h3>
 
-                    <div className="flex items-center space-x-3 justify-center my-5">
+                    <div className="block xl:flex items-center space-x-1 xl:space-x-3 justify-center my-5">
                         <Badge className="bg-primary text-white text-xs font-medium px-2.5 py-0.5 rounded">
                             Primary
                         </Badge>
@@ -57,7 +57,7 @@ export default function BadgeElement({ auth }) {
                 <div className="bg-white dark:bg-gray-800 p-5 rounded">
                     <h3 className="font-bold h-5">Outlined Badge</h3>
 
-                    <div className="flex items-center space-x-3 justify-center my-5">
+                    <div className="block xl:flex items-center space-x-1 xl:space-x-3 justify-center my-5">
                         <Badge className="border border-primary text-primary text-xs font-medium px-2.5 py-0.5 rounded">
                             Primary
                         </Badge>

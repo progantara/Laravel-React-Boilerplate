@@ -117,8 +117,8 @@ export default function AvatarElement({ auth }) {
                 <div className="bg-white dark:bg-gray-800 p-5 rounded">
                     <h3 className="font-bold h-5">Grouped Avatar</h3>
 
-                    <div className="flex items-center space-x-8 justify-center my-5">
-                        <AvatarGroup max={4}>
+                    <div className="block md:flex items-center space-x-2 md:space-x-8 justify-center my-5">
+                        <AvatarGroup max={3}>
                             <Avatar
                                 alt="Remy Sharp"
                                 src="/assets/images/user1-128x128.jpg"

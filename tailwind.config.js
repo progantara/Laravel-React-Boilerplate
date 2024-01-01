@@ -39,7 +39,7 @@ export default {
                     700: "#5c409e",
                     800: "#4d3485",
                     900: "#3b286c",       
-                    light: "#d0b5e3",
+                    light: "#e6d7f1",
                 },
                 success: {
                     DEFAULT: "#10B981",
