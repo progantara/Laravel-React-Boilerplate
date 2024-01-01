@@ -47,7 +47,7 @@ const rows = [
     },
 ];
 
-export default function Dashboard({ auth }) {
+export default function DashAnalytic({ auth }) {
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -55,14 +55,14 @@ export default function Dashboard({ auth }) {
                 <ul className="flex space-x-2 rtl:space-x-reverse">
                     <li>
                         <Link
-                            href={route("dashboard.finance")}
+                            href={route("dashboard.analytic")}
                             className="text-primary hover:underline"
                         >
                             Dashboard
                         </Link>
                     </li>
                     <li className="before:mr-1 before:content-['/'] rtl:before:ml-1 dark:text-gray-400">
-                        <span>Finance</span>
+                        <span>Analytic</span>
                     </li>
                 </ul>
             }

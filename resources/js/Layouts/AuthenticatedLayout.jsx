@@ -8,20 +8,15 @@ import { Button, StyledEngineProvider } from "@mui/material";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import {
-    CgLogOff,
-    CgMenu,
-    CgMenuLeftAlt,
-    CgProfile,
-    CgUser,
-} from "react-icons/cg";
+import { CgChevronDown, CgLogOff, CgMenu, CgProfile } from "react-icons/cg";
 import {
     MdOutlineAccountCircle,
     MdOutlineNotifications,
     MdDashboard,
 } from "react-icons/md";
-import { FaHome, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import SideLink from "@/Components/Links/SideLink";
+import SideLinks from "@/Components/Links/SideLinks";
 
 export default function Authenticated({ user, header, children }) {
     // get width of the window
@@ -63,7 +58,8 @@ export default function Authenticated({ user, header, children }) {
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={currTheme}>
                 <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-                    <nav className="fixed top-0 w-full z-10 bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+                    {/** Navigation */}
+                    <nav className="fixed top-0 w-full z-10 px-5 bg-white shadow dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
                         <div className="flex px-3 py-2 justify-between">
                             <Link href="/">
                                 <div className="flex items-center">
@@ -88,14 +84,20 @@ export default function Authenticated({ user, header, children }) {
                             </div>
 
                             <div className="flex items-center ml-auto">
-                                <button>
-                                    <MdOutlineNotifications className="bg-gray-100 dark:bg-gray-700 p-1 rounded-full dark:text-white text-3xl me-2 hover:text-primary" />
-                                </button>
+                                <span className="relative inline-flex me-2">
+                                    <button>
+                                        <MdOutlineNotifications className="bg-gray-100 dark:bg-gray-700 p-1 rounded-full dark:text-white text-3xl hover:text-primary" />
+                                    </button>
+                                    <span className="flex absolute h-3 w-3 top-0 left-0">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                                    </span>
+                                </span>
 
                                 <Dropdown>
                                     <Dropdown.Trigger>
                                         <button>
-                                            <MdOutlineAccountCircle className="dark:text-white text-3xl me-3" />
+                                            <MdOutlineAccountCircle className="dark:text-white text-3xl hover:text-primary me-3" />
                                         </button>
                                     </Dropdown.Trigger>
                                     <Dropdown.Content
@@ -148,36 +150,74 @@ export default function Authenticated({ user, header, children }) {
                             }
                         >
                             {/** Sidebar */}
-                            <ul>
+                            <ul className="text-sm">
                                 <li>
-                                    <SideLink
-                                        href={route("dashboard")}
-                                        active={route().current("dashboard")}
-                                    >
-                                        <MdDashboard className="text-xl me-2" />
-                                        <span>Dashboard</span>
-                                    </SideLink>
+                                    <SideLinks>
+                                        <SideLinks.Trigger>
+                                            <div className="flex items-center text-md">
+                                                <MdDashboard className="me-2" />
+                                                <span>Dashboard</span>
+                                            </div>
+                                        </SideLinks.Trigger>
+                                        <SideLinks.Content>
+                                            <li>
+                                                <SideLink
+                                                    href={route(
+                                                        "dashboard.finance"
+                                                    )}
+                                                    active={route().current(
+                                                        "dashboard.finance"
+                                                    )}
+                                                    className="mb-1"
+                                                >
+                                                    Finance
+                                                </SideLink>
+                                            </li>
+                                            <li>
+                                                <SideLink
+                                                    href={route(
+                                                        "dashboard.analytic"
+                                                    )}
+                                                    active={route().current(
+                                                        "dashboard.analytic"
+                                                    )}
+                                                    className="mb-1"
+                                                >
+                                                    Analytic
+                                                </SideLink>
+                                            </li>
+                                        </SideLinks.Content>
+                                    </SideLinks>
                                 </li>
-                                <hr className="my-4" />
+                                <div className="bg-white dark:bg-gray-900 text-lg mt-4 mb-2 rounded">
+                                    <div className="p-2 ">APPS</div>
+                                </div>
                                 <li>
                                     <SideLink
                                         href={route("profile.edit")}
                                         active={route().current("profile.edit")}
                                     >
-                                        <CgProfile className="text-xl me-2" />
-                                        <span>Profile</span>
+                                        <div className="flex items-center text-md">
+                                            <CgProfile className="me-2" />
+                                            <span>Profile</span>
+                                        </div>
                                     </SideLink>
                                 </li>
                             </ul>
                         </div>
 
-                        <div className={"relative transition-all duration-[.3s] delay-100 " + (showingNavigationDropdown ? "left-[250px] w-[calc(100%-250px)]" : "left-[0px] w-full")}>
+                        <div
+                            className={
+                                "relative transition-all duration-[.3s] delay-100 " +
+                                (showingNavigationDropdown
+                                    ? "left-[0px] lg:left-[250px] w-full lg:w-[calc(100%-250px)]"
+                                    : "left-[0px] w-full")
+                            }
+                        >
                             {header && (
-                                <header className="bg-white dark:bg-gray-800 shadow">
+                                <header className="">
                                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                                        <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                                            {header}
-                                        </h2>
+                                        {header}
                                     </div>
                                 </header>
                             )}

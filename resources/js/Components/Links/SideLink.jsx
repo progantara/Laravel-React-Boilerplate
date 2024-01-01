@@ -10,8 +10,10 @@ export default function SideLink({
         <Link {...props}>
             <div
                 className={
-                    "flex items-center mb-5 rounded p-2 hover:bg-gray-500 " +
-                    (active ? "bg-gray-500" : "") +
+                    "flex items-center justify-between rounded p-2 hover:bg-gray-100 hover:text-primary dark:hover:text-white dark:hover:bg-gray-500 " +
+                    (active
+                        ? "bg-gray-100 text-primary dark:text-white dark:bg-gray-500 "
+                        : "") +
                     className
                 }
             >

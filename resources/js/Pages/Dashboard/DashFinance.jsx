@@ -47,7 +47,7 @@ const rows = [
     },
 ];
 
-export default function Dashboard({ auth }) {
+export default function DashFinance({ auth }) {
     return (
         <AuthenticatedLayout
             user={auth.user}
