@@ -1,3 +1,4 @@
+import 'react-perfect-scrollbar/dist/css/styles.css';
 import './bootstrap';
 import '../css/app.css';
 

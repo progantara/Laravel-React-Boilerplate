@@ -3,6 +3,8 @@ import { createContext, useEffect, useState } from "react";
 import { StyledEngineProvider } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+import PerfectScrollbar from 'react-perfect-scrollbar';
+
 import Navbar from "./Partials/Navbar";
 import Sidebar from "./Partials/Sidebar";
 
@@ -82,7 +84,7 @@ export default function Authenticated({ user, header, children }) {
                                     : "mt-[53px] lg:flex"
                             }
                         >
-                            <div
+                            <PerfectScrollbar
                                 className={
                                     "transition-[left,width]  duration-[0.3s] ease-[ease-in-out] fixed top-[52px] w-[250px] p-5 bg-white dark:bg-gray-800 dark:text-white border-r border-gray-100 dark:border-gray-700 h-[calc(100vh-52px)] z-10 overflow-y-auto overflow-x-hidden " +
                                     (showingNavigationDropdown
@@ -92,7 +94,7 @@ export default function Authenticated({ user, header, children }) {
                             >
                                 {/** Sidebar */}
                                 <Sidebar />
-                            </div>
+                            </PerfectScrollbar>
 
                             <div
                                 className={
