@@ -1,8 +1,11 @@
 import SideLinks from "@/Components/Links/SideLinks";
-import { MdDashboard } from "react-icons/md";
 import SideLink from "@/Components/Links/SideLink";
+
+import { MdDashboard } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { FaCube } from "react-icons/fa";
+import { IoIosChatbubbles } from "react-icons/io";
+import { TbUsers } from "react-icons/tb";
 
 export default function Sidebar() {
     return (
@@ -42,12 +45,12 @@ export default function Sidebar() {
             </h2>
             <li>
                 <SideLink
-                    href={route("profile.edit")}
-                    active={route().current("profile.edit")}
+                    href={"#"}
+                    active={false}
                 >
                     <div className="flex items-center">
-                        <CgProfile className="me-2" />
-                        <span>Profile</span>
+                        <IoIosChatbubbles className="me-2" />
+                        <span>Chat</span>
                     </div>
                 </SideLink>
             </li>
@@ -121,6 +124,28 @@ export default function Sidebar() {
                                 className="mb-1"
                             >
                                 Blank
+                            </SideLink>
+                        </li>
+                    </SideLinks.Content>
+                </SideLinks>
+            </li>
+            <li>
+                <SideLinks>
+                    <SideLinks.Trigger>
+                        <div className="flex items-center">
+                            <TbUsers className="me-2" />
+                            <span>Users</span>
+                        </div>
+                    </SideLinks.Trigger>
+                    <SideLinks.Content>
+                        <li>
+                            <SideLink
+                                href={route("profile.edit")}
+                                active={route().current("profile.edit")}
+                            >
+                                <div className="flex items-center">
+                                    Profile
+                                </div>
                             </SideLink>
                         </li>
                     </SideLinks.Content>
