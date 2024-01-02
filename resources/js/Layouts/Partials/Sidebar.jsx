@@ -90,6 +90,15 @@ export default function Sidebar() {
                                 Badges
                             </SideLink>
                         </li>
+                        <li>
+                            <SideLink
+                                href={route("elements.button")}
+                                active={route().current("elements.button")}
+                                className="mb-1"
+                            >
+                                Button
+                            </SideLink>
+                        </li>
                     </SideLinks.Content>
                 </SideLinks>
             </li>

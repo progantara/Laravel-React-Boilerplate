@@ -49,6 +49,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/badge', function () {
             return Inertia::render('Elements/BadgeElement');
         })->name('badge');
+        Route::get('/button', function () {
+            return Inertia::render('Elements/ButtonElement');
+        })->name('button');
     });
 
     /** USER AND PAGES */
