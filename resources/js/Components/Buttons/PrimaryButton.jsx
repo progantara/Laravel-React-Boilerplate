@@ -10,7 +10,7 @@ export default function PrimaryButton({
         <Button
             {...props}
             className={
-                `bg-primary hover:bg-primary-500 text-white dark:bg-white dark:hover:bg-gray-300 dark:text-black` +
+                `bg-primary hover:bg-primary-500 text-white dark:bg-white dark:hover:bg-gray-300 dark:text-black ` +
                 className
             }
             disabled={disabled}

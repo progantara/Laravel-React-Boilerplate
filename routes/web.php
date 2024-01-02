@@ -25,9 +25,42 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::prefix('dashboard')->name('dashboard.')->group(function () {
+        Route::get('/finance', function () {
+            return Inertia::render('Dashboard/FinanceDashboard');
+        })->name('finance');
+
+        Route::get('/analytic', function () {
+            return Inertia::render('Dashboard/AnalyticDashboard');
+        })->name('analytic');
+    });
+
+    /** APPS */
+
+    /** UI */
+    Route::prefix('elements')->name('elements.')->group(function () {
+        Route::get('/alert', function () {
+            return Inertia::render('Elements/AlertElement');
+        })->name('alert');
+        Route::get('/avatar', function () {
+            return Inertia::render('Elements/AvatarElement');
+        })->name('avatar');
+        Route::get('/badge', function () {
+            return Inertia::render('Elements/BadgeElement');
+        })->name('badge');
+        Route::get('/button', function () {
+            return Inertia::render('Elements/ButtonElement');
+        })->name('button');
+    });
+
+    /** USER AND PAGES */
+    Route::prefix('pages')->name('pages.')->group(function () {
+        Route::get('/blank', function () {
+            return Inertia::render('Blank');
+        })->name('blank');
+    });
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -35,4 +68,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
